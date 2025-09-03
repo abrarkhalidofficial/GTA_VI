@@ -252,3 +252,86 @@ main {
 .lucia-life-content {
   background: radial-gradient(ellipse, #111117 20%, transparent 70%);
 }
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.navbar-logo {
+  width: 120px;
+  cursor: pointer;
+}
+
+.navbar-menu-btn {
+  width: 32px;
+  cursor: pointer;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+/* Side menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  max-width: 320px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 24px;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.menu-items a {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-items a:hover {
+  color: #2563eb; /* blue hover */
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn img {
+  width: 24px;
+  height: 24px;
+}
