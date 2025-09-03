@@ -1,6 +1,6 @@
 const NavBar = () => {
   const handleNavClick = () => {
-    window.open("https://github.com/your-github-abrarkhalidofficial", "_blank");
+    window.open("https://github.com/abrarkhalidofficial", "_blank");
   };
 
   return (
