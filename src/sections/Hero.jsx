@@ -1,8 +1,8 @@
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 import { useMaskSettings } from '../../constants';
-import ComingSoon from "./ComingSoon"
+import ComingSoon from './ComingSoon';
 
 const Hero = () => {
   const { initialMaskPos, initialMaskSize, maskPos, maskSize } = useMaskSettings();
@@ -24,18 +24,24 @@ const Hero = () => {
         scrub: 2.5,
         end: '+=200%',
         pin: true,
-      }
-    })
+      },
+    });
 
-    tl
-      .to('.fade-out', { opacity: 0, ease: 'power1.inOut' })
+    tl.to('.fade-out', { opacity: 0, ease: 'power1.inOut' })
       .to('.scale-out', { scale: 1, ease: 'power1.inOut' })
       .to('.mask-wrapper', { maskSize, ease: 'power1.inOut' }, '<')
       .to('.mask-wrapper', { opacity: 0 })
-      .to('.overlay-logo', { opacity: 1, onComplete: () => {
-        gsap.to('.overlay-logo', { opacity: 0 });
-      } }, '<')
-      .to('.entrance-message', { duration: 1, ease: 'power1.inOut', maskImage: 'radial-gradient(circle at 50% 0vh, black 50%, transparent 100%)' }, '<')
+      .to(
+        '.overlay-logo',
+        {
+          opacity: 1,
+          onComplete: () => {
+            gsap.to('.overlay-logo', { opacity: 0 });
+          },
+        },
+        '<'
+      )
+      .to('.entrance-message', { duration: 1, ease: 'power1.inOut', maskImage: 'radial-gradient(circle at 50% 0vh, black 50%, transparent 100%)' }, '<');
   });
 
   return (
@@ -43,7 +49,7 @@ const Hero = () => {
       <div className="size-full mask-wrapper">
         <img src="/images/hero-bg.webp" alt="background" className="scale-out" />
         <img src="/images/hero-text.webp" alt="hero-logo" className="title-logo fade-out" />
-        <img  src="/images/watch-trailer.png" alt="trailer" className="trailer-logo fade-out" />
+        <img src="/images/watch-trailer.png" alt="trailer" className="trailer-logo fade-out" />
         <div className="play-img fade-out">
           <img src="/images/play.png" alt="play" className="w-7 ml-1" />
         </div>
@@ -59,7 +65,7 @@ const Hero = () => {
 
       <ComingSoon />
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

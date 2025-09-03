@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState, useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { useState, useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -16,23 +16,15 @@ const NavBar = () => {
   const closeBtnRef = useRef(null);
 
   const handleNavClick = () => {
-    window.open("https://github.com/abrarkhalidofficial", "_blank");
+    window.open('https://github.com/abrarkhalidofficial', '_blank');
   };
 
   // Initial navbar animation
   useGSAP(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     tl.from(navRef.current, { y: -50, opacity: 0, duration: 0.8 })
-      .from(
-        logoRef.current,
-        { x: -40, opacity: 0, scale: 0.7, duration: 0.7 },
-        "-=0.4"
-      )
-      .from(
-        menuBtnRef.current,
-        { x: 40, opacity: 0, scale: 0.7, duration: 0.7 },
-        "-=0.5"
-      );
+      .from(logoRef.current, { x: -40, opacity: 0, scale: 0.7, duration: 0.7 }, '-=0.4')
+      .from(menuBtnRef.current, { x: 40, opacity: 0, scale: 0.7, duration: 0.7 }, '-=0.5');
   }, []);
 
   // Toggle menu open/close
@@ -40,22 +32,14 @@ const NavBar = () => {
     setOpen((prev) => !prev);
 
     if (!open) {
-      gsap.to(menuRef.current, { x: 0, duration: 0.6, ease: "power3.out" });
+      gsap.to(menuRef.current, { x: 0, duration: 0.6, ease: 'power3.out' });
       gsap.to(overlayRef.current, { autoAlpha: 1, duration: 0.3 });
 
-      gsap.fromTo(
-        menuItemsRef.current.children,
-        { x: 30, opacity: 0 },
-        { x: 0, opacity: 1, stagger: 0.15, delay: 0.2 }
-      );
+      gsap.fromTo(menuItemsRef.current.children, { x: 30, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.15, delay: 0.2 });
 
-      gsap.fromTo(
-        closeBtnRef.current,
-        { opacity: 0, rotation: -90 },
-        { opacity: 1, rotation: 0, duration: 0.4, delay: 0.1 }
-      );
+      gsap.fromTo(closeBtnRef.current, { opacity: 0, rotation: -90 }, { opacity: 1, rotation: 0, duration: 0.4, delay: 0.1 });
     } else {
-      gsap.to(menuRef.current, { x: "100%", duration: 0.6, ease: "power3.in" });
+      gsap.to(menuRef.current, { x: '100%', duration: 0.6, ease: 'power3.in' });
       gsap.to(overlayRef.current, { autoAlpha: 0, duration: 0.3 });
     }
   };
@@ -64,20 +48,8 @@ const NavBar = () => {
     <div>
       {/* Navbar */}
       <nav ref={navRef} className="">
-        <img
-          ref={logoRef}
-          src="/images/nav-logo.svg"
-          alt="Logo"
-          className="navbar-logo"
-          onClick={handleNavClick}
-        />
-        <img
-          ref={menuBtnRef}
-          src={open ? "/images/close.svg" : "/images/menu.svg"}
-          alt="Menu"
-          className="navbar-menu-btn"
-          onClick={toggleMenu}
-        />
+        <img ref={logoRef} src="/images/nav-logo.svg" alt="Logo" className="navbar-logo" onClick={handleNavClick} />
+        <img ref={menuBtnRef} src={open ? '/images/close.svg' : '/images/menu.svg'} alt="Menu" className="navbar-menu-btn" onClick={toggleMenu} />
       </nav>
 
       {/* Overlay */}

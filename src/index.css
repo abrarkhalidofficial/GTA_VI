@@ -1,25 +1,25 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @font-face {
-  font-family: "Long";
-  src: url("/fonts/long.woff");
+  font-family: 'Long';
+  src: url('/fonts/long.woff');
 }
 
 @font-face {
-  font-family: "Round";
-  src: url("/fonts/round.woff");
+  font-family: 'Round';
+  src: url('/fonts/round.woff');
 }
 
 @font-face {
-  font-family: "Round Bold";
+  font-family: 'Round Bold';
   font-weight: bold;
-  src: url("/fonts/round-bold.woff");
+  src: url('/fonts/round-bold.woff');
 }
 
 @theme {
-  --font-sans: "Round", sans-serif;
-  --font-long: "Long", sans-serif;
-  --font-round-bold: "Round Bold", sans-serif;
+  --font-sans: 'Round', sans-serif;
+  --font-long: 'Long', sans-serif;
+  --font-round-bold: 'Round Bold', sans-serif;
   --color-yellow: #fff9cb;
   --color-pink: #ffb0c4;
   --breakpoint-sm: 40rem;
@@ -30,7 +30,7 @@
 body {
   width: 100dvw;
   overflow-x: hidden;
-  font-family: "Round", sans-serif;
+  font-family: 'Round', sans-serif;
   background-color: black;
 }
 
@@ -237,7 +237,7 @@ main {
 }
 
 .mask-wrapper {
-  mask-image: url("/images/big-hero-text.svg");
+  mask-image: url('/images/big-hero-text.svg');
   mask-repeat: no-repeat;
 }
 
