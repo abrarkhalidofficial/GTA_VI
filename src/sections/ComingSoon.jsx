@@ -16,7 +16,7 @@ const ComingSoon = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ComingSoon
+export default ComingSoon;
